@@ -1,15 +1,18 @@
 #pragma once
-#include "Rectangle.hpp"
+#include "Polygon.hpp"
 #include "Circle.hpp"
 
+class Triangle : public Polygon {
+public:
+    Triangle() = default;
+    Triangle(Point, Point, Point);
 
-class Square : public Rectangle {
-protected:
-    Square() = default;
-    Square(Point, Point);
-
-    Circle inscribedCircle() const;
-    Circle circumscribedCircle() const;
+    Circle circumscribedCircle();
+    Circle inscribedCircle();
+    Point centroid();
+    Point orthocenter();
+    Line EulerLine();
+    Circle ninePointsCircle();
 
     double perimeter() override;
     double area() override;
@@ -26,5 +29,5 @@ protected:
     void reflex(Line) override;
     void scale(Point, double) override;
 
-    ~Square() = default;
+    ~Triangle() = default;
 };

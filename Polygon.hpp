@@ -17,13 +17,17 @@ public:
     Polygon() = default;
     Polygon(const vector<Point>&);
     Polygon(initializer_list<Point>);
+
     int verticesCount() const;
     const vector<Point> getVertices();
-    bool isConvex() const;
+
     double perimeter() override;
     double area() override;
+
     bool operator== (const Shape&) const override;
     bool operator!= (const Shape&) const override;
+
+    bool isConvex() const;
     bool isCongruentTo(const Shape&) override;
     bool isSimilarTo(const Shape&) override;
     bool containsPoint(Point point) override;
@@ -32,6 +36,7 @@ public:
     void reflex(Point) override;
     void reflex(Line) override;
     void scale(Point, double) override;
+
     ~Polygon() = default;
 };
 
