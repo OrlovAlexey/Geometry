@@ -19,3 +19,5 @@ public:
 
 Point intersect(Line line1, Line line2);
 
+Point reflect_over_Line(Line line, Point point);
+

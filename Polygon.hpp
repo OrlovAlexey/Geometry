@@ -7,6 +7,7 @@
 
 using std::vector;
 using std::initializer_list;
+using std::pair;
 
 
 class Polygon : public Shape {
@@ -33,3 +34,5 @@ public:
     void scale(Point, double) override;
     ~Polygon() = default;
 };
+
+double get_angle(Point a, Point b, Point c);

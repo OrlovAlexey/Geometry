@@ -1,5 +1,11 @@
 #include <iostream>
-#include "geometry.h"
+//#include "geometry.h"
+#include "Polygon.hpp"
+
+using std::cin;
+using std::cout;
+
+
 
 int main(){
 
@@ -39,12 +45,12 @@ int main(){
 //    cout << (*aa == *bb) << '\n';
 
 
-    Triangle tri(p1,p2,p3);
-    cout << tri.circumscribedCircle().center().x << '\t' <<tri.circumscribedCircle().center().y << '\n';
-    cout << tri.inscribedCircle().center().x << '\t' << tri.inscribedCircle().center().y << '\n';
-    cout << tri.centroid().x << '\t' << tri.centroid().y << '\n';
-    cout << tri.orthocenter().x <<'\t' << tri.orthocenter().y << '\n';
-    cout << tri.EulerLine().a << " " << tri.EulerLine().b << " " << tri.EulerLine().c << '\n';
+//    Triangle tri(p1,p2,p3);
+//    cout << tri.circumscribedCircle().center().x << '\t' <<tri.circumscribedCircle().center().y << '\n';
+//    cout << tri.inscribedCircle().center().x << '\t' << tri.inscribedCircle().center().y << '\n';
+//    cout << tri.centroid().x << '\t' << tri.centroid().y << '\n';
+//    cout << tri.orthocenter().x <<'\t' << tri.orthocenter().y << '\n';
+//    cout << tri.EulerLine().a << " " << tri.EulerLine().b << " " << tri.EulerLine().c << '\n';
 //    cout << tri.ninePointsCircle().center().x << '\t' << tri.ninePointsCircle().center().y << '\t' << tri.ninePointsCircle().r << '\n';
 
 //    Rectangle rec1{p2, p3, p4, p1};

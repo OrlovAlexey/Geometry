@@ -322,21 +322,7 @@ void Polygon::reflex(Point point) {
     this->scale(point, -1.0);
 }
 
-Point reflect_over_Line(Line line, Point point) {
-    Point result;
-    double m, d;
-    if (!cmp(line.b, 0.0)) {
-        m = -line.a / line.b;
-        d = (point.x + (point.y + line.c / line.b) * m) / (1 + m * m);
-        result.x = 2 * d - point.x;
-        result.y = 2 * d * m - point.y - 2 * line.c / line.b;
-    }
-    else {
-        result.x = 2 * (-line.c / line.a - point.x) + point.x;
-        result.y = point.y;
-    }
-    return result;
-}
+
 void Polygon::reflex(Line axis) {
     int size = vertices.size();
     for (int i = 0; i < size; ++i) {

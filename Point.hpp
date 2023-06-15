@@ -15,4 +15,5 @@ public:
     ~Point() = default;
 };
 
+double point_distance(Point point1, Point point2);
 
