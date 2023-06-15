@@ -1,6 +1,8 @@
 #include <cmath>
 
 
+bool cmp(double a, double b);
+
 class Point {
 public:
     double x;
