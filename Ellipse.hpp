@@ -3,8 +3,11 @@
 #include "Line.hpp"
 #include "Shape.hpp"
 
-#include <cmath>
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <cmath>
+#include <set>
 #include <utility>
 
 using std::pair;
@@ -13,7 +16,7 @@ using std::make_pair;
 
 class Ellipse : public Shape {
 protected:
-    double a, b, c, e; // a, b - полуоси; с = sqrt(a^2 + b^2); e - эксцентриситет
+    double a, b, c, e; // a, b - semiaxis; с = sqrt(a^2 + b^2); e - eccentricity
     Point f1, f2; // focuses
 public:
     Ellipse() = default;

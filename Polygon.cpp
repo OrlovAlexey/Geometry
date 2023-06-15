@@ -89,7 +89,7 @@ bool Polygon::operator== (const Shape& shape) const {
         flag = true;
         for (int j = 0; j < size2; ++j) {
             if (vertices[(i+j) % size1] != poly.vertices[j]) {
-                flag = false;// Здесь по хорошему стоит делать сразу break, тогда в 99% случаев алгоритм станет линеен, а не квадратичен как сейчас
+                flag = false;
                 break;
             }
         }
@@ -126,15 +126,14 @@ double get_angle( Point a, Point b, Point c )
     return alpha * 180. / M_PI;
 }
 
-// Эквивалентные расстояния не гарантируют подобие, углы при этом можно сделать какие угодно, см классические цепочки
 bool Polygon::isCongruentTo(const Shape& shape) {
     Polygon poly;
     try {
         poly = dynamic_cast<const Polygon &>(shape);
-    } catch (...) {// - Кажется у вас outOfRange - хмм, кидай false... ладно, это следующий семестр
+    } catch (...) {
         return false;
     }
-    vector<pair<double, pair<double, double>>> sides1, sides2; //сторона + косинус + синус со знаком
+    vector<pair<double, pair<double, double>>> sides1, sides2; // side + cosine + sinus with sign
 
     int size1 = this->vertices.size();
     int size2 = poly.vertices.size();
@@ -161,7 +160,7 @@ bool Polygon::isCongruentTo(const Shape& shape) {
             if (!cmp(sides1[(i + j) % size1].first, sides2[j].first) ||
                 !cmp(sides1[(i + j) % size1].second.first, sides2[j].second.first) ||
                 !cmp(sides1[(i + j) % size1].second.second, sides2[j].second.second)) {
-                flag = false;// А если ещё сюда добавить break, то можно и не думать о создании векторов и кешировании вычислений
+                flag = false;
                 break;
             }
         }
@@ -213,7 +212,7 @@ bool Polygon::isSimilarTo(const Shape& shape) {
         flag = true;
         for (int j = 0; j < size2; ++j) {
             if (!cmp(sides1[(i + j) % size1] / sides1[(i + j + 1) % size1], sides2[j] / sides2[(j + 1) % size2])) {
-                flag = false;// Аналогично
+                flag = false;
                 break;
             }
         }

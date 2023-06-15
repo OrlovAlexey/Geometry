@@ -1,5 +1,4 @@
 #include <iostream>
-//#include "geometry.h"
 #include "Polygon.hpp"
 
 using std::cin;

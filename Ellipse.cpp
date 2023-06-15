@@ -44,7 +44,8 @@ Point Ellipse::center() const {
 }
 
 double Ellipse::perimeter() {
-    return 4 * a * std::comp_ellint_2(e);
+//    return 4 * a * std::comp_ellint_2(e);
+    return 0;
 }
 
 double Ellipse::area() {
